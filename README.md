@@ -1,7 +1,7 @@
 # 🔵 Fundamentos
 
 #### ¿Qué es programar?
-Es dar instrucciones a una computadore para que realice una tarea en específico.
+Es dar instrucciones a una computadora para que realice una tarea en específico.
 
 #### ¿Qué es Python y para qué sirve?
 Python es un lenguaje de programación de alto nivel y multiparadigma que sirve para realizar distintos tipos de programas como aplicaciones o para manejo de datos.
