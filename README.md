@@ -1,4 +1,4 @@
-🔵 Fundamentos
+# 🔵 Fundamentos
 
 ¿Qué es programar?
 Es dar instrucciones a una computadore para que realice una tarea en específico.
@@ -29,7 +29,7 @@ Un error es cuando algo sale mal a la hora de ejecutar el código, algunos error
 - Error de tipo, ej: Intentar sumar texto con un número.
 - Error de identación, ej: la tabulación no se hizo y el print está a la izquierda de donde debería por lo que no esta entrando en el if.
 
-🔵 Lógica de programación
+# 🔵 Lógica de programación
 
 Comparar datos: (== (igual), != (diferente), < (menor que), > (mayor que), <= (menor o igual que), >= (mayor o igual que)).
 
@@ -47,7 +47,7 @@ Buenas prácticas al nombrar variables (nombres claros, sin espacios).
 
 ¿Qué hacer cuando algo no funciona? (buscar, leer errores, no frustrarse).
 
-🔵 Estructuras de control
+# 🔵 Estructuras de control
 
 Repetir acciones con bucles: for y while.
 
