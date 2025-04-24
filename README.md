@@ -38,10 +38,10 @@ Un error es cuando algo sale mal a la hora de ejecutar el código, algunos error
 Una lista es una estructura de datos que sirve para almacenar varios elementos de diferente tipo en una sola variable y poder acceder a ellos para agregar, eliminar y cambiar valores.
 
 #### Crear listas: 
-Lista = [ ]
+    Lista = [ ]
 
 #### Acceder a elementos de una lista 
-- (miLista[0])
+    (miLista[0])
 - En el indice utilizar ":", ej: miLista([3:7]), esto estaría escogiendo una sección de la lista desde la posición 3 (inclusive) hasta la posición 7 (no inclusive)
 
 ## Modificar elementos de una lista
@@ -58,10 +58,10 @@ Lista = [ ]
 - del: Elimina el elemento en una posición específica, similar a pop.
 
 #### Editar elementos de una lista:
-miLista[indice] = nuevo_valor
+    miLista[indice] = nuevo_valor
   
 #### Conocer la cantidad de elementos: 
-len().
+    len().
 
 #### Recorrer listas:
 Con un for
@@ -96,7 +96,10 @@ Es cuando un bucle está dentro de otro bucle. Ej: un for o while que corre dent
 #### ¿Cómo funcionan los índices y rangos en listas (range())?
 - Los índices son los números que indican la posición de los elementos dentro de una lista y empiezan desde 0 (si se recorre de izquierda a derecha), o desde -1 (si se recorre de derecha a izquierda).
 - range() genera una secuencia de números, ideal para usar en bucles for (range(inicio, fin, paso))
-      ej: for i in range(len(miLista)):
+
+  ejemplo:
+
+      for i in range(len(miLista)):
   
 ## Introducción a las funciones
 
@@ -126,8 +129,8 @@ El retorno es el valor que una función devuelve cuando termina de ejecutar, se 
 for (condicional para) y while (condicional mientras).
 
 #### Salir de un bucle antes de tiempo: 
-break: permite terminar la ejecución de un bucle antes de que haya recorrido todos los elementos en el momento que se cumpla una condición.
-continue: se utiliza para saltar el resto del código en la iteración actual del bucle y continuar con la siguiente iteración. Es decir, no se ejecuta el código que sigue al continue, pero el bucle no se detiene.
+- break: permite terminar la ejecución de un bucle antes de que haya recorrido todos los elementos en el momento que se cumpla una condición.
+- continue: se utiliza para saltar el resto del código en la iteración actual del bucle y continuar con la siguiente iteración. Es decir, no se ejecuta el código que sigue al continue, pero el bucle no se detiene.
 
 #### Manejo básico de errores: 
 try-except: permite capturar excepciones (errores) y manejarlas de manera controlada, evitando que el programa se detenga inesperadamente.
@@ -138,26 +141,16 @@ try-except: permite capturar excepciones (errores) y manejarlas de manera contro
 
   ejemplo:
   
-  try:
-  
-    numero = int(input("Introduce un número: "))
-  
-    resultado = 10 / numero
-  
-  except ZeroDivisionError:
-  
-    print("Error: No puedes dividir entre cero.")
-  
-  except ValueError:
-  
-    print("Error: Entrada no válida, por favor introduce un número.")
-  
-  else:
-  
-    print(f"El resultado de la división es: {resultado}")
-  
-  finally:
-  
-    print("Este bloque siempre se ejecuta.")
+      try:
+        numero = int(input("Introduce un número: "))
+        resultado = 10 / numero
+      except ZeroDivisionError:
+        print("Error: No puedes dividir entre cero.")
+      except ValueError:
+        print("Error: Entrada no válida, por favor introduce un número.")
+      else:
+        print(f"El resultado de la división es: {resultado}")
+      finally:
+        print("Este bloque siempre se ejecuta.")
 
 
