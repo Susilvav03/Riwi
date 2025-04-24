@@ -137,16 +137,27 @@ try-except: permite capturar excepciones (errores) y manejarlas de manera contro
 - finally: siempre se ejecuta sin importar si hubo o no un error. Se usa para limpiar recursos o realizar tareas importantes, como cerrar archivos, liberar memoria, etc.
 
   ejemplo:
+  
   try:
+  
     numero = int(input("Introduce un número: "))
+  
     resultado = 10 / numero
+  
   except ZeroDivisionError:
+  
     print("Error: No puedes dividir entre cero.")
+  
   except ValueError:
+  
     print("Error: Entrada no válida, por favor introduce un número.")
+  
   else:
+  
     print(f"El resultado de la división es: {resultado}")
+  
   finally:
+  
     print("Este bloque siempre se ejecuta.")
 
 
