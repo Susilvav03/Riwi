@@ -34,6 +34,35 @@ Un error es cuando algo sale mal a la hora de ejecutar el código, algunos error
 - Error de tipo, ej: Intentar sumar texto con un número.
 - Error de identación, ej: la tabulación no se hizo y el print está a la izquierda de donde debería por lo que no esta entrando en el if.
 
+#### ¿Qué es una lista y para qué sirve?
+Una lista es una estructura de datos que sirve para almacenar varios elementos de diferente tipo en una sola variable y poder acceder a ellos para agregar, eliminar y cambiar valores.
+
+#### Crear listas: 
+Lista = [ ]
+
+#### Acceder a elementos de una lista 
+- (miLista[0])
+- En el indice utilizar ":", ej: miLista([3:7]), esto estaría escogiendo una sección de la lista desde la posición 3 (inclusive) hasta la posición 7 (no inclusive)
+
+## Modificar elementos de una lista
+
+#### Agregar elementos a una lista: 
+- .append(): Agrega un elemento al final de la lista.
+- .insert(): Agrega un elemento en una posición específica (índice).
+- .extend(): Agrega varios elementos de otra lista (o cualquier iterable).
+
+#### Eliminar elementos de una lista: 
+- .remove(): Elimina la primera aparición del valor que le digas.
+- .pop(): Elimina el elemento en la posición que indiques. Si no pones nada, elimina el último.
+- .clear(): Borra todos los elementos de la lista.
+- del: Elimina el elemento en una posición específica, similar a pop.
+  
+#### Conocer la cantidad de elementos: 
+len().
+
+#### Recorrer listas:
+Con un for
+
 # 🔵 Lógica de programación
 
 #### Comparar datos: 
