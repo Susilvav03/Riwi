@@ -1,11 +1,11 @@
-print("Sistema de validación de productos") # Programa
+print("\n     Sistema de validación de productos") # Programa
 productList = [] # Crear lista donde se almacenarán los productos
 addProduct = "si" # Inicialmente esta variable empezará como si pero podrá cambiar
 
 # Se iniciará el programa siempre y cuando la variable addProduct sea igual a si, de lo contrario procederá a mostrar los productos
 while (addProduct.lower() == "si"):
 
-    print("\n--- Nuevo Producto ---") # Separador
+    print("\n----------------- Nuevo Producto -----------------") # Separador
 
     productName = input("Ingresa el nombre del producto: ") # Se inicializa la variable donde se guardará el nombre del producto y se le pide al usuario
 
