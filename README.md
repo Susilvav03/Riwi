@@ -34,6 +34,8 @@ Un error es cuando algo sale mal a la hora de ejecutar el código, algunos error
 - Error de tipo, ej: Intentar sumar texto con un número.
 - Error de identación, ej: la tabulación no se hizo y el print está a la izquierda de donde debería por lo que no esta entrando en el if.
 
+## Listas
+
 #### ¿Qué es una lista y para qué sirve?
 Una lista es una estructura de datos que sirve para almacenar varios elementos de diferente tipo en una sola variable y poder acceder a ellos para agregar, eliminar y cambiar valores.
 
@@ -43,8 +45,6 @@ Una lista es una estructura de datos que sirve para almacenar varios elementos d
 #### Acceder a elementos de una lista 
     (miLista[0])
 - En el indice utilizar ":", ej: miLista([3:7]), esto estaría escogiendo una sección de la lista desde la posición 3 (inclusive) hasta la posición 7 (no inclusive)
-
-## Modificar elementos de una lista
 
 #### Agregar elementos a una lista: 
 - .append(): Agrega un elemento al final de la lista.
@@ -65,6 +65,22 @@ Una lista es una estructura de datos que sirve para almacenar varios elementos d
 
 #### Recorrer listas:
 Con un for
+
+## Diccionarios
+Un diccionario en Python es una colección desordenada de pares clave-valor, donde cada clave debe ser única.
+    
+    mi_diccionario = {"nombre": "Juan", "edad": 30, "activo": True}
+- Desordenados: Aunque desde Python 3.7 mantienen el orden de inserción.
+- Mutables: Se pueden modificar, agregar o eliminar pares.
+- Claves únicas: No puede haber claves duplicadas.
+- Claves inmutables: Solo tipos inmutables como str, int, tuple pueden ser claves.
+
+#### Métodos:
+
+- get(clave, valor_predeterminado)
+Devuelve el valor de la clave; si no existe, devuelve un valor por defecto.
+
+
 
 # 🔵 Lógica de programación
 
