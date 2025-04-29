@@ -73,7 +73,7 @@ Una lista es una estructura de datos que sirve para almacenar varios elementos d
 #### Conocer la cantidad de elementos: 
     len().
 
-## Recorrer listas:
+#### Recorrer listas:
 Con un for:
 
     for elemento in mi_lista:
