@@ -35,9 +35,12 @@ Un error es cuando algo sale mal a la hora de ejecutar el código, algunos error
 - Error de identación, ej: la tabulación no se hizo y el print está a la izquierda de donde debería por lo que no esta entrando en el if.
 
 ## Listas
-
-#### ¿Qué es una lista y para qué sirve?
 Una lista es una estructura de datos que sirve para almacenar varios elementos de diferente tipo en una sola variable y poder acceder a ellos para agregar, eliminar y cambiar valores.
+
+    lista = [1, "hola", 3.14, True]
+- Ordenadas: El orden en que agregas los elementos se mantiene.
+- Mutables: Puedes cambiar, agregar o eliminar elementos después de creada.
+- Permiten duplicados: Puedes tener valores repetidos.
 
 #### Crear listas: 
     Lista = [ ]
@@ -47,15 +50,22 @@ Una lista es una estructura de datos que sirve para almacenar varios elementos d
 - En el indice utilizar ":", ej: miLista([3:7]), esto estaría escogiendo una sección de la lista desde la posición 3 (inclusive) hasta la posición 7 (no inclusive)
 
 #### Agregar elementos a una lista: 
-- .append(): Agrega un elemento al final de la lista.
-- .insert(): Agrega un elemento en una posición específica (índice).
-- .extend(): Agrega varios elementos de otra lista (o cualquier iterable).
+- `append()` Agrega un elemento al final de la lista.
+- `insert()` Agrega un elemento en una posición específica (índice).
+- `extend()` Agrega varios elementos de otra lista (o cualquier iterable).
 
 #### Eliminar elementos de una lista: 
-- .remove(): Elimina la primera aparición del valor que le digas.
-- .pop(): Elimina el elemento en la posición que indiques. Si no pones nada, elimina el último.
-- .clear(): Borra todos los elementos de la lista.
-- del: Elimina el elemento en una posición específica, similar a pop.
+- `remove()` Elimina la primera aparición del valor que le digas.
+- `pop()` Elimina el elemento en la posición que indiques. Si no pones nada, elimina el último.
+- `clear()` Borra todos los elementos de la lista.
+- `del` Elimina el elemento en una posición específica, similar a pop.
+
+#### Otros métodos:
+- `index(x[, start[, end]])` Devuelve el primer índice del valor especificado.
+- `count(x)` Cuenta cuántas veces aparece el valor especificado.
+- `sort(key=None, reverse=False)` Ordena los elementos de la lista.
+- `reverse()` Invierte los elementos de la lista en su lugar.
+- `copy()` Retorna una copia superficial de la lista.
 
 #### Editar elementos de una lista:
     miLista[indice] = nuevo_valor
@@ -63,8 +73,14 @@ Una lista es una estructura de datos que sirve para almacenar varios elementos d
 #### Conocer la cantidad de elementos: 
     len().
 
-#### Recorrer listas:
-Con un for
+## Recorrer listas:
+Con un for:
+
+    for elemento in mi_lista:
+    print(elemento)
+
+    for i in range(len(mi_lista)):
+    print(f"Índice {i}: {mi_lista[i]}")
 
 ## Diccionarios
 Un diccionario en Python es una colección desordenada de pares clave-valor, donde cada clave debe ser única.
@@ -77,9 +93,16 @@ Un diccionario en Python es una colección desordenada de pares clave-valor, don
 
 #### Métodos:
 
-- get(clave, valor_predeterminado)
-Devuelve el valor de la clave; si no existe, devuelve un valor por defecto.
-
+- `get(clave, valor_predeterminado)` Devuelve el valor de la clave; si no existe, devuelve un valor por defecto.
+- `keys()` Retorna una vista de todas las claves.
+- `values()` Retorna una vista de todos los valores.
+- `items()` Retorna una vista de todos los pares (clave, valor).
+- `update(otro_diccionario)` Actualiza el diccionario con pares clave-valor de otro.
+- `pop(clave[, valor])` Elimina la clave y devuelve su valor; si no existe y no se da valor, lanza error.
+- `popitem()` Elimina y devuelve el último par insertado.
+- `clear()` Elimina todos los elementos del diccionario.
+- `setdefault(clave, valor_predeterminado)` Devuelve el valor de la clave; si no existe, la crea con el valor dado.
+- `copy()` Retorna una copia superficial del diccionario.
 
 
 # 🔵 Lógica de programación
