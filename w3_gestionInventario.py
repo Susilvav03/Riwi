@@ -28,7 +28,6 @@ Para ello, utilizarás una función anónima (lambda) que facilite este cálculo
 - Contador de intentos de añadir productos con datos inválidos
 
 """
-CYAN = "\033[96m"
 GREEN = "\033[92m"
 MAGENTA = "\033[95m"
 RED = "\033[91m"
