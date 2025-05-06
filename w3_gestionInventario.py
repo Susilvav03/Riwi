@@ -20,140 +20,179 @@ El programa debe calcular el valor total de los productos en inventario y mostra
 Para ello, utilizarás una función anónima (lambda) que facilite este cálculo.
 
 *** Manejo de errores ***
-El programa debe manejar errores de entrada del usuario
+- El programa debe manejar errores de entrada del usuario
 - Intentar añadir un producto con un precio o cantidad negativa
-- Intentar buscar productos que no existeny en el inventario
+- Intentar buscar productos que no existen en el inventario
 - Intentar actualizar el precio de un producto que no existe
 - Intentar eliminar un producto que no existe
 - Contador de intentos de añadir productos con datos inválidos
 
 """
-
+CYAN = "\033[96m"
+GREEN = "\033[92m"
+MAGENTA = "\033[95m"
+RED = "\033[91m"
+YELLOW = "\033[93m"
+RESET = "\033[0m"
 flag = True
 inventory = {}
-count = 0
 
 # Función para mostrar menú y obtener la opción del usuario
 def menu():
-    print("------------------------------------------------")
-    print("Bienvenido al sistema de gestión de inventario")
-    print("--------------------- Menú ---------------------")
-    print("1. Añadir productos")
-    print("2. Consultar productos")
-    print("3. Actualizar precios")
-    print("4. Eliminar productos")
-    print("5. Calcular el valor total del inventario")
-    print("6. Salir")
-    print("------------------------------------------------")
+    print(MAGENTA + "\n _________________________________________________" + RESET)
+    print(MAGENTA + "|                                                 |" + RESET)
+    print(MAGENTA + "|  Bienvenido al sistema de gestión de inventario |" + RESET)
+    print(MAGENTA + "|_________________________________________________|" + RESET)
+    print(MAGENTA + "|                                                 |" + RESET)
+    print(MAGENTA + "|---------------------- Menú ---------------------|" + RESET)
+    print(MAGENTA + "|_________________________________________________|" + RESET)
+    print(MAGENTA + "|                                                 |" + RESET)
+    print(MAGENTA + "| 1. Añadir productos                             |" + RESET)
+    print(MAGENTA + "| 2. Consultar productos                          |" + RESET)
+    print(MAGENTA + "| 3. Actualizar precios                           |" + RESET)
+    print(MAGENTA + "| 4. Eliminar productos                           |" + RESET)
+    print(MAGENTA + "| 5. Calcular el valor total del inventario       |" + RESET)
+    print(MAGENTA + "| 6. Salir                                        |" + RESET)
+    print(MAGENTA + "|_________________________________________________|" + RESET)
 
-    return input("Seleccione una opción: ")
+    return input("\nSeleccione una opción: ")
 
 # Función para añadir productos al inventario 
-def añadir_producto(inventory):
-    global count
+def addProduct(inventory):
     # Se inicializa el contador de intentos
     count = 0
     # Se permite un máximo de 3 intentos para añadir un producto
     while count < 3:
         try:
-            # Se solicita al usuario el nombre, precio y cantidad del producto
-            productName = input("Ingrese el nombre del producto: ")
+            productName = input("\nIngrese el nombre del producto: ")
 
             # Se valida que el nombre del producto no esté vacío
             if not productName.strip():
-                print("Error: El nombre del producto no puede estar vacío.")
+                print(YELLOW + "Error: El nombre del producto no puede estar vacío." + RESET)
                 count += 1
-                return
+                continue
             
-            price = float(input("Ingrese el precio del producto: "))
-            quantity = int(input("Ingrese la cantidad disponible: "))
+            price = int(input("\nIngrese el precio del producto: $"))
 
-            # Se valida que el precio y la cantidad sean mayores que cero
-            if price < 0 or quantity < 0:
-                print("Error: El precio y la cantidad deben ser mayores que cero.")
+            # Se valida que el precio sea mayor que cero
+            if price < 0:
+                print(YELLOW + "Error: El precio debe ser mayor que cero." + RESET)
                 count += 1
-                return
+                continue
+
+            quantity = int(input("\nIngrese la cantidad disponible: "))
+
+            # Se valida que la cantidad sea mayor que cero
+            if quantity < 0:
+                print(YELLOW + "Error: la cantidad debe ser mayor que cero." + RESET)
+                count += 1
+                continue
 
             # Se verifica si el producto ya existe en el inventario
             if productName in inventory:
-                print(f"El producto '{productName}' ya existe en el inventario.")
+                print(YELLOW + f"\nEl producto '{productName}' ya existe en el inventario." + RESET)
                 count += 1
-                return
+                continue
             
             # Se añade el producto al inventario
             inventory[productName] = (price, quantity)
-            print(f"Producto '{productName}' añadido con éxito.")
+            print(GREEN + f"\nProducto '{productName}' se ha añadido con éxito." + RESET)
             break
         except ValueError:
-            # Máximo de 3 intentos para ingresar datos válidos
-            print("Error: Entrada inválida. Por favor, intente de nuevo.")
+            # Errores
+            print(YELLOW + "Error: Entrada inválida. Por favor, intente de nuevo, debe ingresar un número entero" + RESET)
             count += 1
-            if count >= 3:
-                print("Demasiados intentos fallidos. Saliendo del programa.")
-                exit()
+    else:
+        # Máximo de 3 intentos para ingresar datos válidos
+        print(RED + "\n __________________________________________________ " + RESET)
+        print(RED + "|                                                  |" + RESET)
+        print(RED + "|  Demasiados intentos fallidos. Volviendo al menú.|" + RESET)
+        print(RED + "|__________________________________________________|" + RESET)
+        return
+        
 
 # Función para consultar productos en el inventario
-def consultar_producto(inventory):
-    productName = input("Ingrese el nombre del producto a consultar: ")
+def searchProduct(inventory):
+    productName = input("\nIngrese el nombre del producto a consultar: ")
     # Se verifica si el producto existe en el inventario
     if productName in inventory:
         price, quantity = inventory[productName]
-        print(f"Producto: {productName}, Precio: {price}, Cantidad: {quantity}")
+        print(GREEN + f"""
+    Producto: {productName} 
+    Precio:   ${price} 
+    Cantidad: {quantity}""" + RESET)
     else:
-        print(f"El producto '{productName}' no se encuentra en el inventario.")
+        print(YELLOW + f"\nEl producto '{productName}' no se encuentra en el inventario." + RESET)
 
 # Función para actualizar el precio de un producto
-def actualizar_precio(inventory):
-    productName = input("Ingrese el nombre del producto a actualizar: ")
-    # Se verifica si el producto existe en el inventario
-    if productName in inventory:
-        try:
-            newPrice = float(input("Ingrese el nuevo precio: "))
-            # Se valida que el nuevo precio sea mayor que cero
-            if newPrice < 0:
-                print("Error: El nuevo precio debe ser mayor que cero.")
-                return
-            # Se actualiza el precio del producto en el inventario
-            price, quantity = inventory[productName]
-            inventory[productName] = (newPrice, quantity)
-            print(f"El precio del producto '{productName}' ha sido actualizado a {newPrice}.")
-        except ValueError:
-            print("Error: Entrada inválida. Por favor, intente de nuevo.")
+def updatePrice(inventory):
+    # Se inicializa el contador de intentos
+    count = 0
+
+    while count < 3:
+        productName = input("\nIngrese el nombre del producto a actualizar: ")
+
+        # Se verifica si el producto existe en el inventario
+        if productName in inventory:
+            try:
+                newPrice = int(input("Ingrese el nuevo precio: $"))
+                # Se valida que el nuevo precio sea mayor que cero
+                if newPrice < 0:
+                    print(YELLOW + "Error: El nuevo precio debe ser mayor que cero." + RESET)
+                    count += 1
+                    continue
+                # Se actualiza el precio del producto en el inventario
+                price, quantity = inventory[productName]
+                inventory[productName] = (newPrice, quantity)
+                print(GREEN + f"\nEl precio del producto '{productName}' ha sido actualizado a ${newPrice}." + RESET)
+                break
+            except ValueError:
+                print(YELLOW + "Error: Entrada inválida. Por favor, intente de nuevo, debe ingresar un número entero" + RESET)
+                count += 1
+                continue
+        else:
+            print(YELLOW + f"\nEl producto '{productName}' no se encuentra en el inventario." + RESET)
+            return  
     else:
-        print(f"El producto '{productName}' no se encuentra en el inventario.")
+        # Máximo de 3 intentos para ingresar datos válidos
+        print(RED + "\n __________________________________________________ " + RESET)
+        print(RED + "|                                                  |" + RESET)
+        print(RED + "|  Demasiados intentos fallidos. Volviendo al menú.|" + RESET)
+        print(RED + "|__________________________________________________|" + RESET)
+        return
 
 # Función para eliminar un producto del inventario
-def eliminar_producto(inventory):
-    productName = input("Ingrese el nombre del producto a eliminar: ")
+def deleteProduct(inventory):
+    productName = input("\nIngrese el nombre del producto a eliminar: ")
     # Se verifica si el producto existe en el inventario
     if productName in inventory:
         del inventory[productName]
-        print(f"El producto '{productName}' ha sido eliminado del inventario.")
+        print(GREEN + f"\nEl producto '{productName}' ha sido eliminado del inventario." + RESET)
     else:
-        print(f"El producto '{productName}' no se encuentra en el inventario.")
+        print(YELLOW + f"\nEl producto '{productName}' no se encuentra en el inventario." + RESET)
 
 # Función para calcular el valor total del inventario
-def calcular_valor_total(inventory):
+def calculateTotal(inventory):
     # Se utiliza una función lambda para calcular el valor total
     total_value = sum(map(lambda x: x[0] * x[1], inventory.values()))
-    print(f"El valor total del inventario es: {total_value}")
+    print(GREEN + f"\nEl valor total del inventario es: ${total_value}" + RESET)
 
 # Bucle principal del programa
 while flag:
     option = menu()
     match option:
         case '1':
-            añadir_producto(inventory)
+            addProduct(inventory)
         case '2':
-            consultar_producto(inventory)
+            searchProduct(inventory)
         case '3':
-            actualizar_precio(inventory)
+            updatePrice(inventory)
         case '4':
-            eliminar_producto(inventory)
+            deleteProduct(inventory)
         case '5':
-            calcular_valor_total(inventory)
+            calculateTotal(inventory)
         case '6':
-            print("Saliendo del programa...")
+            print("\n...Saliendo del programa...")
             flag = False
         case _:
-            print("Opción inválida. Por favor, intente de nuevo.")
+            print("\nOpción inválida. Por favor, ingresa un número del 1 al 6 de acuerdo a lo que desees hacer.")
