@@ -70,7 +70,7 @@ def validateInventory(name):
     return False, f"El producto '{name}' no existe en el inventario" 
     
 def errorMessage():
-    """ Mostrar mensaje de error """
+    """ Mostrar mensaje de error al llegar a 3 intentos """
     print(RED + "\n __________________________________________________ " + RESET)
     print(RED + "|                                                  |" + RESET)
     print(RED + "|  Demasiados intentos fallidos. Volviendo al menú.|" + RESET)
@@ -83,7 +83,7 @@ def addProduct(name, price, quantity):
     print(GREEN + f"Producto '{name}' ha sido añadido al inventario exitosamente" + RESET)
 
 def searchProduct(name):
-    """ Buscar un producto en el inventario e imprima su precio y cantidad """
+    """ Buscar un producto en el inventario e imprimir su precio y cantidad """
     price, quantity = inventory[name]
     print(GREEN + f"""
         Producto '{name}' encontrado: 
@@ -107,14 +107,17 @@ def calculateTotalValue():
     print(GREEN + f"\nEl valor total del inventario es: ${total_value}" + RESET)
 
 
-#Bucle principal
+# Bucle principal
 while flag:
     menu()
 
+    #Elegir opción del menú
     option = input("\nSeleccione una opción: ")
 
     match option:
+        # Opción 1: Añadir Productos
         case "1":
+            # Contador de intentos para ingresar un nombre que no exista y un precio y cantidad que sean > 0, maximo permitido = 3
             i=0
             while i < 3:
                 name = input("\nIngrese el nombre del producto: ")
@@ -139,7 +142,7 @@ while flag:
                     break
             else:
                 errorMessage()
-        
+        # Opción 2: Consultar Productos
         case "2":
             name = input("\nIngrese el nombre del producto a consultar: ")
             val, msg = validateInventory(name)
@@ -147,13 +150,14 @@ while flag:
                 searchProduct(name)
             else:
                 print(RED + msg + RESET)
-
+        # Opción 3: Actualizar Precio
         case "3":
             name = input("\nIngrese el nombre del producto a actualizar: ")
             val, msg = validateInventory(name)
             if not val:
                 print(RED + msg + RESET)
-            else:  
+            else: 
+                # Contador de intentos para ingresar precio, máximo permitido = 3
                 i=0
                 while i < 3:
                     newPrice = input("\nIngrese el nuevo precio del producto: ")
@@ -166,7 +170,7 @@ while flag:
                         break
                 else:
                     errorMessage()
-        
+        # Opción 4: Eliminar producto 
         case "4":
             name = input("\nIngrese el nombre del producto a eliminar: ")
             val, msg = validateInventory(name)
@@ -174,13 +178,14 @@ while flag:
                 print(RED + msg + RESET)
             else:
                 deleteProduct(name)
-
+        # Opción 5: Cálcular valor total del inventario
         case "5":
             calculateTotalValue()
-
+        # Opción 6: Salir
         case "6":
             print(GREEN + "\nGracias por usar el sistema de gestión de inventario. ¡Hasta luego!" + RESET)
             flag = False
+        # Opción no valida     
         case _:
             print(RED + "\nOpción no válida. Por favor, seleccione una opción del menú." + RESET)
             
