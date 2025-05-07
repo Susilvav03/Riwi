@@ -57,10 +57,10 @@ def menu():
 
 def validatePositive(value):
     """ Validar que el valor sea positivo """
-    if value.isdigit() and float(value) > 0:
+    if value.isdigit() and int(value) > 0:
         return True, None
     
-    return False, "El valor ingresado debe ser un número positivo"
+    return False, "El valor ingresado debe ser un número positivo y entero"
 
 def validateInventory(name):
     """ Validar que el producto exista en el inventario """
@@ -71,23 +71,24 @@ def validateInventory(name):
     
 def errorMessage():
     """ Mostrar mensaje de error al llegar a 3 intentos """
-    print(RED + "\n __________________________________________________ " + RESET)
-    print(RED + "|                                                  |" + RESET)
-    print(RED + "|  Demasiados intentos fallidos. Volviendo al menú.|" + RESET)
-    print(RED + "|__________________________________________________|" + RESET)
+    print(RED + "\n ___________________________________________________ " + RESET)
+    print(RED + "|                                                   |" + RESET)
+    print(RED + "|  Demasiados intentos fallidos. Volviendo al menú. |" + RESET)
+    print(RED + "|___________________________________________________|" + RESET)
     
 
 def addProduct(name, price, quantity):
     """ Añadir un producto al inventario """
     inventory[name] = (price, quantity)
     print(GREEN + f"Producto '{name}' ha sido añadido al inventario exitosamente" + RESET)
+    return True
 
 def searchProduct(name):
     """ Buscar un producto en el inventario e imprimir su precio y cantidad """
     price, quantity = inventory[name]
     print(GREEN + f"""
         Producto '{name}' encontrado: 
-        Precio: ${price}, 
+        Precio: ${price} 
         Cantidad: {quantity}""" + RESET)
 
 def updatePrice(name, newPrice):
@@ -95,6 +96,7 @@ def updatePrice(name, newPrice):
     price, quantity = inventory[name]
     inventory[name] = (newPrice, quantity)
     print(GREEN + f"El precio del producto '{name}' ha sido actualizado de ${price} a ${newPrice}." + RESET)
+    return True
 
 def deleteProduct(name):
     """ Eliminar un producto del inventario """
@@ -103,8 +105,8 @@ def deleteProduct(name):
 
 def calculateTotalValue():
     """ Calcular el valor total del inventario """
-    total_value = sum(map(lambda x: x[0] * x[1], inventory.values()))
-    print(GREEN + f"\nEl valor total del inventario es: ${total_value}" + RESET)
+    totalValue = sum(map(lambda x: int(x[0]) * int(x[1]), inventory.values()))
+    print(GREEN + f"\nEl valor total del inventario es: ${totalValue}" + RESET)
 
 
 # Bucle principal
