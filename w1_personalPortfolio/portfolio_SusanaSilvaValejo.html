@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width-device-width, initial-scale-1.0">
+  <title>My Personal Portfolio</title>
+</head>
+<body>
+<h1> Susana Silva Vallejo - Riwi Developer</h1>
+<nav>
+  <a href="#aboutMe">About me</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+<section id="aboutMe">
+  <h2>About Me</h2>
+  <p>Hi, my name is Susana.</p>
+  <p>I'm currently studying systems engineer in National University of Colombia.</p>
+  <p>I love to travel and learning new things, and then sharing them with others.</p>
+  <img src="img/Susana.png" alt="Susana S.V" width="200"> 
+  <h3>Technical skills</h3>
+  <ul>
+    <li>Python</li>
+    <li>HTML</li>
+    <li>CSS</li>
+  </ul>
+</section>
+<section id="projects">
+  <h2>Projects</h2>
+  <h3>Project 1: Portfolio Website</h3>
+  <p>This is my first project, I built a personal portfolio using only HTML</p>
+  <img src="img/project.png" alt="Representation of a project" width="300">
+  <table>
+    <tr>
+      <th>Project Name</th>
+      <th>Tecnologies Used</th>
+      <th>Link</th>
+    </tr>
+    <tr>
+      <th>Portfolio Website</th>
+      <td>HTML</td>
+      <td><a href="#">View Project</a></td>
+    </tr>
+  </table>
+</section>
+<form action="/send" method="post" id="contact">
+  <label for="name">Name: </label>
+  <input type="text" id="name" name="name" required>
+  <label for="email">Email: </label>
+  <input type="email" id="email" name="email" required>
+  <label for="message">Message: </label>
+  <textarea id="message" name="message" rows="3" required></textarea>
+  <input type="submit" value="Send">
+</form>
+    <h3>Extra info:</h3>
+    <a href="https://github.com/Susilvav03/" target="_blank">Github</a>
+    <a href="https://www.linkedin.com/in/susilvav" target="_blank">LinkedIn</a>
+</body>
+</html>
