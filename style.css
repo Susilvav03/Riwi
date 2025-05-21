@@ -15,20 +15,20 @@ body {
 }
 
 h1 {
-	font-size: 20rem;
+	font-size: 15rem;
 }
 h2 {
-	font-size: 4rem;
+	font-size: 3rem;
 	font-weight: 500;
 }
 h4 {
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
 p {
-	font-size: 2rem;
+	font-size: 1.3rem;
 	margin: 10px 0;
-	line-height: 1.7em;
+	line-height: 1.5em;
 	font-weight: 300;
 }
 
@@ -39,26 +39,26 @@ a {
 /* Utility Classes */
 .container {
 	margin: auto;
-	max-width: 1700px;
+	max-width: 1500px;
 	overflow: auto;
 	padding: 0 20px;
 }
 
 .large {
-	font-size: 2rem;
+	font-size: 1.5rem;
 }
 
-.txt-orange {
+.txt-violet {
 	color:mediumvioletred;
 }
 
 .display-1 {
-	font-size: 7rem;
+	font-size: 5rem;
 }
 
 .btn {
 	display: inline-block;
-	font-size: 1.7rem;
+	font-size: 1.5rem;
 	padding: 15px 20px;
 	font-weight: bold;
 	letter-spacing: 10px;
@@ -93,8 +93,8 @@ form .form-control {
 	display: block;
 	width: 100%;
 	padding: 10px 15px;
-	font-size: 1.5rem;
-	line-height: 1.5;
+	font-size: 1 rem;
+	line-height: 1.2;
 	color: #373c42;
 	background: #fff;
 	border: 2px solid #ced4da;
@@ -111,7 +111,7 @@ form .form-control {
 #navbar {
 	color: #fff;
 	overflow: auto;
-	padding-top: 20px;
+	padding-top: 40px;
 	padding-bottom: 20px;
 }
 
@@ -121,8 +121,8 @@ form .form-control {
 
 #navbar .logo {
 	float: left;
-	padding-top: 16px;
-	font-size: 50px;
+	padding-top: 10px;
+	font-size: 30px;
 }
 
 #navbar ul {
@@ -146,12 +146,12 @@ form .form-control {
 
 /* Showcase */
 #showcase {
-	padding: 10px 0;
+	padding: 25px 0;
 }
 
 .showcase-row {
 	display: flex;
-	padding: 30px 0;
+	padding: 30px 10px;
 }
 
 .showcase-row-title p.large {
