@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Reset */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* Main Styling */
+html,
+body {
+	font-family: 'Montserrat', sans-serif;
+	color: #424242;
+}
+
+h1 {
+	font-size: 20rem;
+}
+h2 {
+	font-size: 4rem;
+	font-weight: 500;
+}
+h4 {
+	font-size: 2rem;
+}
+
+p {
+	font-size: 2rem;
+	margin: 10px 0;
+	line-height: 1.7em;
+	font-weight: 300;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Utility Classes */
+.container {
+	margin: auto;
+	max-width: 1700px;
+	overflow: auto;
+	padding: 0 20px;
+}
+
+.large {
+	font-size: 2rem;
+}
+
+.txt-orange {
+	color:mediumvioletred;
+}
+
+.display-1 {
+	font-size: 7rem;
+}
+
+.btn {
+	display: inline-block;
+	font-size: 1.7rem;
+	padding: 15px 20px;
+	font-weight: bold;
+	letter-spacing: 10px;
+	border-radius: 20px;
+}
+
+.btn-round {
+	border-radius: 20px;
+}
+
+.btn-dark {
+	background: mediumvioletred;
+	border: 1px solid mediumvioletred;
+	color: #fff;
+}
+
+.btn-dark:hover {
+	background: rgb(255, 15, 167);
+	color: #fff;
+}
+
+form label {
+	display: inline-block;
+	margin-bottom: 15px;
+}
+
+form .form-group {
+	margin-bottom: 20px;
+}
+
+form .form-control {
+	display: block;
+	width: 100%;
+	padding: 10px 15px;
+	font-size: 1.5rem;
+	line-height: 1.5;
+	color: #373c42;
+	background: #fff;
+	border: 2px solid #ced4da;
+	border-radius: 10px;
+}
+
+/* Mainheader */
+#mainheader {
+	background: radial-gradient(at 10% 10px, rgb(255, 159, 220), #fff, #fff);
+	height: 100vh;
+}
+
+/* Navbar */
+#navbar {
+	color: #fff;
+	overflow: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#navbar a {
+	color: #4d4d4d;
+}
+
+#navbar .logo {
+	float: left;
+	padding-top: 16px;
+	font-size: 50px;
+}
+
+#navbar ul {
+	list-style: none;
+	float: right;
+}
+
+#navbar ul li {
+	float: right;
+}
+
+#navbar ul li a {
+	display: block;
+	padding: 20px;
+	text-align: center;
+}
+
+#navbar ul li a:hover {
+	color: rgb(255, 15, 167);
+}
+
+/* Showcase */
+#showcase {
+	padding: 10px 0;
+}
+
+.showcase-row {
+	display: flex;
+	padding: 30px 0;
+}
+
+.showcase-row-title p.large {
+	padding-bottom: 20px;
+}
+
+/* Portfolio */
+#portfolio {
+	padding: 10px 0;
+	text-align: center;
+}
+
+#portfolio p {
+	width: 1500px;
+	margin: 0 auto;
+	padding-top: 10px;
+	padding-bottom: 50px;
+}
+
+.portfolio-row {
+	display: flex;
+}
+
+.portfolio-row img {
+	width: 100%;
+	padding: 10px;
+	border-radius: 20px;
+}
+
+/* About Me */
+#aboutMe {
+	padding: 80px 0;
+	text-align: center;
+}
+
+#aboutMe h2 {
+	padding-bottom: 50px;
+}
+
+#aboutMe p {
+	padding-bottom: 20px;
+}
+
+/* Skills */
+.skills {
+  max-width: 68.75rem;
+  margin: auto;
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.headerSkills {
+  margin-bottom: 1rem;
+}
+
+.skillsContainer img {
+  padding: 1.25rem;
+}
+
+.icon {
+  width: 20rem;
+}
+
+
+/* Contact */
+#contact {
+	padding: 80px 0;
+}
+
+#contact h2 {
+	text-align: center;
+}
+
+#contact p {
+	width: 500px;
+	margin: 0 auto;
+	padding-top: 10px;
+	padding-bottom: 50px;
+}
+
+.contact-row {
+	display: flex;
+	padding: 20px;
+}
+
+.contact-row-img {
+	width: 50%;
+}
+
+.contact-row-img img {
+	padding: 120px;
+}
+
+.contact-row-form {
+	width: 50%;
+	border: 1px solid #c4c4c4;
+	border-radius: 10px;
+	padding: 70px;
+}
+
+.contact-row-form h4 {
+	padding-bottom: 40px;
+	text-align: center;
+}
+
+.contact-row-form button {
+	width: 100%;
+}
+
+/* Footer */
+#mainfooter {
+	text-align: center;
+	padding: 30px;
+}
